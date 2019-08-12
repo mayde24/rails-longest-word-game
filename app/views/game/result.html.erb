@@ -1,0 +1,12 @@
+<h1>Your Result</h1>
+<h3>What is the longest word you can found?</h3>
+<div class="letter">
+  <% @letters.split.each do |element| %>
+  <div>
+     <p><%= element %></p>
+   </div>
+  <%end%>
+</div>
+
+<h3><%= @tab[:message] %></h3>
+<h4> Your score is up to: <%= @tab[:score] %>.</h4>

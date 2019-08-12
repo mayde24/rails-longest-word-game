@@ -1,0 +1,16 @@
+<h1>Your letters</h1>
+  <h3>What is the longest word you can found?</h3>
+<div class="letter">
+  <% @letters.each do |element| %>
+  <div>
+     <p><%= element %></p>
+   </div>
+  <%end%>
+</div>
+
+<form action="/result" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <input type="text" name="resultat" placeholder="Your answer..." value="<%= params[:resultat] %>" class="input">
+  <input type="submit" class="button">
+</form>
